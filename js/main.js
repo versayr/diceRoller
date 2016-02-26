@@ -7,19 +7,14 @@ function rollDice(diceSides, quantityDice) {
   resultsList = [];
   total = 0;
   for (var i = 0; i < quantityDice; i++) {
-    console.log(i);
     var rollResult = 1 + Math.floor(Math.random() * diceSides);
-    console.log("Roll Result = " + rollResult);
     total = total + rollResult;
-    console.log("Total = " + total);
     resultsList.push(rollResult);
-    console.log(resultsList);
   };
-  // $('#total').text(total);
 };
 
 function printResults(resultsList, total) {
-  $('#resultsField').prepend('<br><span>= ' + total + '</span>');
+  $('#resultsField').prepend('<br><span>= ' + total + '</span><br>');
   $('#resultsField').prepend('<span>' + resultsList + '</span>');
 };
 
