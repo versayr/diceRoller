@@ -91,6 +91,10 @@ body {
 #diceOptions ul li {
   margin-bottom: 10px;
 }
+#diceOptions div {
+  display: flex;
+  justify-content: space-between;
+}
 .button {
   text-decoration: none;
   color: black;
