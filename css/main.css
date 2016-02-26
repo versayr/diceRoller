@@ -100,7 +100,13 @@ body {
   border: 1px solid black;
   background: grey;
 }
-
+#resultsField p {
+  margin: 0;
+  border-top: 1px solid black;
+}
+#resultsField p:nth-of-type(1) {
+  border-top: none;
+}
 
 
 

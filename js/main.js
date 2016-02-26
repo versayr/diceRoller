@@ -14,14 +14,20 @@ function rollDice(diceSides, quantityDice) {
 };
 
 function printResults(resultsList, total) {
-  $('#resultsField').prepend('<br><span>= ' + total + '</span><br>');
+  $('#resultsField').prepend('<span>= ' + total + '</span>');
+  $('#resultsField').prepend('<p>' + arrangeResultsList(resultsList) + '</p>'); 
+};
+
+function arrangeResultsList(resultsList) {
+  var resultsListString = '';
   for (var i = 0; i < resultsList.length; i++) {
-    if (i != 0) {
-      $('#resultsField').prepend('<span>' + resultsList[i] + ' + </span>');
+    if (i != (resultsList.length - 1)) {
+      resultsListString += resultsList[i] + ' + ';
     } else {
-      $('#resultsField').prepend('<span>' + resultsList[i] + '</span>');
+      resultsListString += resultsList[i];
     };
   };
+  return resultsListString;
 };
 
 $(document).ready(function() {
