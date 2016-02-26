@@ -15,7 +15,13 @@ function rollDice(diceSides, quantityDice) {
 
 function printResults(resultsList, total) {
   $('#resultsField').prepend('<br><span>= ' + total + '</span><br>');
-  $('#resultsField').prepend('<span>' + resultsList + '</span>');
+  for (var i = 0; i < resultsList.length; i++) {
+    if (i != 0) {
+      $('#resultsField').prepend('<span>' + resultsList[i] + ' + </span>');
+    } else {
+      $('#resultsField').prepend('<span>' + resultsList[i] + '</span>');
+    };
+  };
 };
 
 $(document).ready(function() {
