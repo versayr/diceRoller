@@ -96,6 +96,8 @@ body {
   margin-left: 10px;
   padding: 10px;
   height: 100%;
+  max-height: 400px;
+  overflow: auto;
   width: 265px;
   border: 1px solid black;
   background: grey;
@@ -104,7 +106,7 @@ body {
   margin: 0;
   border-top: 1px solid black;
 }
-#resultsField p:nth-of-type(1) {
+#resultsField p:first-of-type {
   border-top: none;
 }
 
