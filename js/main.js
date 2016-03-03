@@ -37,4 +37,7 @@ $(document).ready(function() {
     rollDice(numberSides, quantityDice);
     printResults(resultsList, total);
   });
+  $('#clear').click(function() {
+    alert('Clear the thing');
+  });
 });
