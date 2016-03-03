@@ -38,6 +38,6 @@ $(document).ready(function() {
     printResults(resultsList, total);
   });
   $('#clear').click(function() {
-    alert('Clear the thing');
+    $('#resultsField').empty();
   });
 });
