@@ -91,6 +91,31 @@ body {
 #diceOptions ul li {
   margin-bottom: 10px;
 }
+#diceOptions div {
+  display: flex;
+  justify-content: space-between;
+}
+#diceOptions li ul {
+  display: flex;
+  flex-wrap: wrap;
+  width: 170px;
+  justify-content: space-between;
+}
+.defaultDice {
+  text-decoration: none;
+  color: black;
+  padding: 5px;
+  background: white;
+  border: 1px solid black;
+  margin-right: 4px;
+}
+.button {
+  text-decoration: none;
+  color: black;
+  border: 1px solid black;
+  background: yellow;
+  border-radius: 4px;
+}
 
 #resultsField {
   margin-left: 10px;
