@@ -14,8 +14,12 @@ function rollDice(diceSides, quantityDice) {
 };
 
 function printResults(resultsList, total) {
-  $('#resultsField').prepend('<span>= ' + total + '</span>');
-  $('#resultsField').prepend('<p>' + arrangeResultsList(resultsList) + '</p>'); 
+  $('#resultsField').prepend(
+      '<div>' +
+      '<p>' + arrangeResultsList(resultsList) + '</p>' +
+      '<span>= ' + total + '</span>' +
+      '</div>'
+      );
 };
 
 function arrangeResultsList(resultsList) {
@@ -36,6 +40,9 @@ $(document).ready(function() {
     numberSides = $('#numberSides').val();
     rollDice(numberSides, quantityDice);
     printResults(resultsList, total);
+  });
+  $('a.advancedOptions').click(function() {
+    $('ul.advancedOptions').toggleClass('hidden');
   });
   $('#clear').click(function() {
     $('#resultsField').empty();

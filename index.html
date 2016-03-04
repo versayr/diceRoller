@@ -39,10 +39,24 @@
       </ul>
       </li>
       <li class=""><input id="numberSides" type="text" placeholder="6"></li>
-      <li><div>
+      <li>
+      <div>
         <a href="#" id="roll" class="button">ROLL</a>
         <a href="#" id="clear" class="button">CLEAR</a>
-      </div></li>
+      </div>
+      </li>
+      <li><a href="#" class="advancedOptions">Advanced Options &#9660;</a></li>
+      <li>
+      <ul class="hidden advancedOptions">
+        <li>
+        <input type=checkbox name="manualSelect"/>
+        <span> Manual Selection of Dice Sides</span>
+        </li>
+        <li>
+        <input type=checkbox name="removeLowest"/>
+        <span> Remove Lowest Roll</span>
+        </li>
+      </ul>
     </ul>
   </div>
   <div id="resultsField">
