@@ -1,5 +1,5 @@
-var numberSides = 6;
-var quantityDice = 3;
+var numberSides = 0;
+var quantityDice = 0;
 var resultsList = [];
 var total = 0;
 
@@ -15,11 +15,13 @@ function rollDice(diceSides, quantityDice) {
 
 function printResults(resultsList, total) {
   $('#resultsField').prepend(
-      '<div>' +
+      '<div class="result">' +
       '<p>' + arrangeResultsList(resultsList) + '</p>' +
-      '<span>= ' + total + '</span>' +
-      '</div>'
-      );
+      '<div class="totalDiv">' +
+      '<span class="total">= ' + total + '</span>' +
+      '<span class="resultsTag">' + quantityDice+ 'd' + numberSides + '</span>' +
+      '</div>' +
+      '</div>');
 };
 
 function arrangeResultsList(resultsList) {
@@ -36,13 +38,29 @@ function arrangeResultsList(resultsList) {
 
 $(document).ready(function() {
   $('#roll').click(function() {
-    quantityDice = $('#quantityDice').val();
-    numberSides = $('#numberSides').val();
+    if ($('#quantityDice').val() !== '' 
+      && parseInt($('#quantityDice').val()) !== 'NaN' 
+      && parseInt($('#quantityDice').val()) !== 0 
+      && parseInt($('#quantityDice').val()) > 0) {
+      quantityDice = parseInt($('#quantityDice').val());
+    } else {
+      alert('Please choose how many dice you\'d like to roll!');
+      return;
+    };
+    if ($('#numberSides').val() != '') {
+      numberSides = $('#numberSides').val();
+    } else {
+      numberSides = 6;
+    };
     rollDice(numberSides, quantityDice);
     printResults(resultsList, total);
   });
   $('a.advancedOptions').click(function() {
-    $('ul.advancedOptions').toggleClass('hidden');
+    if ($('ul.advancedOptions').hasClass('hidden')) {
+      $('ul.advancedOptions').removeClass('hidden');
+    } else {
+      $('ul.advancedOptions').addClass('hidden');
+    };
   });
   $('#clear').click(function() {
     $('#resultsField').empty();

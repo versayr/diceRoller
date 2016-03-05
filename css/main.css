@@ -132,12 +132,30 @@ body {
 }
 #resultsField p {
   margin: 0;
-  border-top: 1px solid black;
 }
-#resultsField p:first-of-type {
+#resultsField .result {
+  border-top: 1px solid black;
+  margin-top: 2px;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+}
+#resultsField .result:first-of-type {
   border-top: none;
 }
-
+#resultsField .totalDiv {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+.total {
+  align-self: flex-start;
+}
+.resultsTag {
+  align-self: flex-end;
+  padding: 2px;
+  background: white;
+}
 
 
 
