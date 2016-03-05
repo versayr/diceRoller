@@ -37,16 +37,25 @@ function arrangeResultsList(resultsList) {
 };
 
 $(document).ready(function() {
+  $('.defaultDice').click(function() {
+    if ($(this).hasClass('selected')) {
+      $(this).removeClass('selected');
+    } else {
+      $('.defaultDice').removeClass('selected');
+      $(this).addClass('selected');
+    };
+  });
   $('#roll').click(function() {
     if ($('#quantityDice').val() !== '' 
       && parseInt($('#quantityDice').val()) !== 'NaN' 
       && parseInt($('#quantityDice').val()) !== 0 
       && parseInt($('#quantityDice').val()) > 0) {
-      quantityDice = parseInt($('#quantityDice').val());
-    } else {
-      alert('Please choose how many dice you\'d like to roll!');
-      return;
-    };
+        quantityDice = parseInt($('#quantityDice').val());
+      } else {
+        alert('Please choose how many dice you\'d like to roll!');
+        $('#quantityDice').val('');
+        return;
+      };
     if ($('#numberSides').val() != '') {
       numberSides = $('#numberSides').val();
     } else {
@@ -64,5 +73,8 @@ $(document).ready(function() {
   });
   $('#clear').click(function() {
     $('#resultsField').empty();
+    $('#quantityDice').val('');
+    $('.defaultDice').removeClass('selected');
+    $('#numberSides').val('');
   });
 });
