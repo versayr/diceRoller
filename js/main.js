@@ -37,7 +37,9 @@ function arrangeResultsList(resultsList) {
 };
 
 $(document).ready(function() {
-  $('.defaultDice').click(function() {
+  $('input[name="removeLowest"]').prop('checked', false);
+  $('input[name="manualSelect"]').prop('checked', false);
+  $('li.defaultDice').click(function() {
     if ($(this).hasClass('selected')) {
       $(this).removeClass('selected');
     } else {
@@ -56,10 +58,24 @@ $(document).ready(function() {
         $('#quantityDice').val('');
         return;
       };
-    if ($('#numberSides').val() != '') {
-      numberSides = $('#numberSides').val();
+    if (!$('.manualInput').hasClass('hidden')) {
+      if ($('#numberSides').val() != ''
+        && parseInt($('#numberSides').val()) !== 'NaN' 
+        && parseInt($('#numberSides').val()) !== 0 
+        && parseInt($('#numberSides').val()) > 0) {
+          numberSides = parseInt($('#numberSides').val());
+        } else {
+          alert('Please choose how many sides your dice should have!');
+          $('#numberSides').val('');
+          return;
+        };
     } else {
-      numberSides = 6;
+      if ($('.selected').length > 0) {
+        numberSides = $('.selected').attr('number');
+      } else {
+        alert('Please select a die to roll!');
+        return;
+      };
     };
     rollDice(numberSides, quantityDice);
     printResults(resultsList, total);
@@ -76,5 +92,22 @@ $(document).ready(function() {
     $('#quantityDice').val('');
     $('.defaultDice').removeClass('selected');
     $('#numberSides').val('');
+  });
+  $('input[name="manualSelect"]').click(function() {
+    if($(this).is(':checked')) {
+      $('ul.defaultDice').addClass('hidden');
+      $('li.manualInput').removeClass('hidden');
+      $('#numberSides').val($('.selected').attr('number'));
+    } else {
+      $('ul.defaultDice').removeClass('hidden');
+      $('li.manualInput').addClass('hidden');
+      $('#numberSides').val('');
+    };
+  });
+  $('input[name="removeLowest"]').click(function() {
+    if($(this).is(':checked')) {
+      alert('This isn\'t working yet!');
+      $('input[name="removeLowest"]').prop('checked', false);
+    };
   });
 });

@@ -13,9 +13,6 @@
 <script src="js/vendor/modernizr-2.8.3.min.js"></script>
 </head>
 <body>
-<!--[if lt IE 8]>
-            <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
-        <![endif]-->
 <header>
   <h1>Bruce's Dice Roller</h1>
 </header>
@@ -27,18 +24,18 @@
       <li><input id="quantityDice" type="text"></li>
       <li><span>Number of Sides</span></li>
       <li>
-      <ul>
-        <li class="defaultDice"><a href="#">d2</a></li>
-        <li class="defaultDice"><a href="#">d4</a></li>
-        <li class="defaultDice"><a href="#">d6</a></li>
-        <li class="defaultDice"><a href="#">d8</a></li>
-        <li class="defaultDice"><a href="#">d10</a></li>
-        <li class="defaultDice"><a href="#">d12</a></li>
-        <li class="defaultDice"><a href="#">d20</a></li>
-        <li class="defaultDice"><a href="#">d100</a></li>
+      <ul class="defaultDice">
+        <li class="defaultDice" number="2"><a href="#">d2</a></li>
+        <li class="defaultDice" number="4"><a href="#">d4</a></li>
+        <li class="defaultDice" number="6"><a href="#">d6</a></li>
+        <li class="defaultDice" number="8"><a href="#">d8</a></li>
+        <li class="defaultDice" number="10"><a href="#">d10</a></li>
+        <li class="defaultDice" number="12"><a href="#">d12</a></li>
+        <li class="defaultDice" number="20"><a href="#">d20</a></li>
+        <li class="defaultDice" number="100"><a href="#">d100</a></li>
       </ul>
       </li>
-      <li class="hidden"><input id="numberSides" type="text"></li>
+      <li class="hidden manualInput"><input id="numberSides" type="text"></li>
       <li>
       <div>
         <a href="#" id="roll" class="button">ROLL</a>
@@ -56,16 +53,16 @@
         <input type=checkbox name="removeLowest"/>
         <span> Remove Lowest Roll</span>
         </li>
+        <li>
+        <input type=checkbox name="allowMultipleDice"/>
+        <span> Allow Multiple Kinds of Dice</span>
+        </li>
       </ul>
     </ul>
   </div>
   <div id="resultsField">
   </div>
 </div>
-
-<footer>
-  <span>Made by Bruce</span>
-</footer>
 
 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
 <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.11.2.min.js"><\/script>')</script>
