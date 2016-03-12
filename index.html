@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-<title></title>
+<title>diceRoller</title>
 <meta name="description" content="">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -13,9 +13,6 @@
 <script src="js/vendor/modernizr-2.8.3.min.js"></script>
 </head>
 <body>
-<!--[if lt IE 8]>
-            <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
-        <![endif]-->
 <header>
   <h1>Bruce's Dice Roller</h1>
 </header>
@@ -24,34 +21,48 @@
   <div id="diceOptions">
     <ul>
       <li><span>Number of Dice</span></li>
-      <li><input id="quantityDice" type="text" placeholder="6"></li>
+      <li><input id="quantityDice" type="text"></li>
       <li><span>Number of Sides</span></li>
       <li>
-      <ul>
-        <li><a href="#" class="defaultDice">d2</a></li>
-        <li><a href="#" class="defaultDice">d4</a></li>
-        <li><a href="#" class="defaultDice">d6</a></li>
-        <li><a href="#" class="defaultDice">d8</a></li>
-        <li><a href="#" class="defaultDice">d10</a></li>
-        <li><a href="#" class="defaultDice">d12</a></li>
-        <li><a href="#" class="defaultDice">d20</a></li>
-        <li><a href="#" class="defaultDice">d100</a></li>
+      <ul class="defaultDice">
+        <li class="defaultDice" number="2"><a href="#">d2</a></li>
+        <li class="defaultDice" number="4"><a href="#">d4</a></li>
+        <li class="defaultDice" number="6"><a href="#">d6</a></li>
+        <li class="defaultDice" number="8"><a href="#">d8</a></li>
+        <li class="defaultDice" number="10"><a href="#">d10</a></li>
+        <li class="defaultDice" number="12"><a href="#">d12</a></li>
+        <li class="defaultDice" number="20"><a href="#">d20</a></li>
+        <li class="defaultDice" number="100"><a href="#">d100</a></li>
       </ul>
       </li>
-      <li class=""><input id="numberSides" type="text" placeholder="6"></li>
-      <li><div>
+      <li class="hidden manualInput"><input id="numberSides" type="text"></li>
+      <li>
+      <div>
         <a href="#" id="roll" class="button">ROLL</a>
         <a href="#" id="clear" class="button">CLEAR</a>
-      </div></li>
+      </div>
+      </li>
+      <li><a href="#" class="advancedOptions">&#9656; Advanced Options</a></li>
+      <li>
+      <ul class="advancedOptions hidden">
+        <li>
+        <input type=checkbox name="manualSelect"/>
+        <span> Manual Selection of Dice Sides</span>
+        </li>
+        <li>
+        <input type=checkbox name="removeLowest"/>
+        <span> Remove Lowest Roll</span>
+        </li>
+        <li>
+        <input type=checkbox name="allowMultipleDice"/>
+        <span> Allow Multiple Kinds of Dice</span>
+        </li>
+      </ul>
     </ul>
   </div>
   <div id="resultsField">
   </div>
 </div>
-
-<footer>
-  <span>Made by Bruce</span>
-</footer>
 
 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
 <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.11.2.min.js"><\/script>')</script>
