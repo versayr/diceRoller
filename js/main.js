@@ -110,10 +110,4 @@ $(document).ready(function() {
       $('input[name="removeLowest"]').prop('checked', false);
     };
   });
-  $('input[name="allowMultipleDice"]').click(function() {
-    if($(this).is(':checked')) {
-      alert('This isn\'t working yet!');
-      $('input[name="allowMultipleDice"]').prop('checked', false);
-    };
-  });
 });
