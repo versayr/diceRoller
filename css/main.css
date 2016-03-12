@@ -65,6 +65,7 @@ textarea {
 }
 
 body {
+  font-family: 'Source Sans Pro', sans-serif;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -80,23 +81,25 @@ body {
   align-items: flex-start;
 }
 
-#diceOptions {
+.diceOptions {
   display: flex;
   flex-direction: column;
+  background: #852441;
+  padding: 20px;
 }
-#diceOptions ul {
+.diceOptions ul {
   padding: 0;
   margin: 0;
   list-style: none;
 }
-#diceOptions ul li {
-  margin-bottom: 10px;
-}
-#diceOptions div {
+.diceOptions div {
   display: flex;
   justify-content: space-between;
 }
-#diceOptions li ul {
+.diceOptions ul li {
+  margin-bottom: 10px;
+}
+.diceOptions li ul {
   display: flex;
   flex-wrap: wrap;
   width: 170px;
@@ -122,6 +125,9 @@ body {
 .advancedOptions {
   text-decoration: none;
   color: black;
+}
+ul.advancedOptions li.advancedOptions {
+  margin: 0px;
 }
 
 #resultsField {
