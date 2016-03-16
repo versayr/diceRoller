@@ -61,7 +61,7 @@ textarea {
    Author's custom styles
    ========================================================================== */
 *{
-  /*outline: 1px solid black;*/
+  /* outline: 1px solid black; */
 }
 
 body {
@@ -96,6 +96,15 @@ body {
   display: flex;
   justify-content: space-between;
 }
+.diceOptions input[type="text"] {
+  padding: 5px;
+  border: none;
+  border-bottom: 3px solid #D1B78F;
+  transition: border 0.3s;
+}
+.diceOptions input[type="text"]:focus {
+  border-bottom: solid 3px #AA8B5B;
+}
 .diceOptions ul li {
   margin-bottom: 10px;
 }
@@ -103,24 +112,32 @@ body {
   display: flex;
   flex-wrap: wrap;
   width: 170px;
-  justify-content: space-between;
+  justify-content: space-around;
+}
+li.defaultDice {
+  width: 50px;
+  height: 30px;
+  background: #F7E7CE;
+  border-bottom: 4px solid #D1B78F;
+  text-align: center;
+  transition: border 0.3s;
 }
 .defaultDice a{
   text-decoration: none;
   color: black;
-  padding: 5px;
-  background: #F7E7CE;
-  margin-right: 4px;
 }
-.selected a {
-  background: red;
+li.selected {
+  border-bottom: 4px solid red;
 }
 .button {
   text-decoration: none;
   color: black;
-  padding: 2px;
-  background: #CEDEF7;
-  border-radius: 4px;
+  padding: 4px;
+  background: #D1B78F;
+  border-bottom: 4px solid #AA8B5B;
+}
+.button:hover {
+  border-bottom: 4px solid #846433;
 }
 .advancedOptions {
   text-decoration: none;
