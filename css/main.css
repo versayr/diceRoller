@@ -96,7 +96,6 @@ body {
   display: flex;
   justify-content: space-between;
 }
-<<<<<<< HEAD
 .diceOptions input[type="text"] {
   padding: 5px;
   border: none;
@@ -110,9 +109,6 @@ body {
   margin-bottom: 10px;
 }
 .diceOptions li ul {
-=======
-#diceOptions li ul {
->>>>>>> master
   display: flex;
   flex-wrap: wrap;
   width: 170px;
