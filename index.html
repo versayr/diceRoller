@@ -9,6 +9,7 @@
 
 <link rel="stylesheet" href="css/normalize.min.css">
 <link rel="stylesheet" href="css/main.css">
+<link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro' rel='stylesheet' type='text/css'>
 
 <script src="js/vendor/modernizr-2.8.3.min.js"></script>
 </head>
@@ -18,7 +19,7 @@
 </header>
 
 <div id="main">
-  <div id="diceOptions">
+  <div class="diceOptions">
     <ul>
       <li><span>Number of Dice</span></li>
       <li><input id="quantityDice" type="text"></li>
@@ -45,15 +46,15 @@
       <li><a href="#" class="advancedOptions">&#9656; Advanced Options</a></li>
       <li>
       <ul class="advancedOptions hidden">
-        <li>
+        <li class="advancedOptions">
         <input type=checkbox name="manualSelect"/>
         <span> Manual Selection of Dice Sides</span>
         </li>
-        <li>
+        <li class="advancedOptions">
         <input type=checkbox name="removeLowest"/>
         <span> Remove Lowest Roll</span>
         </li>
-        <li>
+        <li class="advancedOptions">
         <input type=checkbox name="allowMultipleDice"/>
         <span> Allow Multiple Kinds of Dice</span>
         </li>
