@@ -65,7 +65,6 @@ textarea {
 }
 
 body {
-  font-family: 'Source Sans Pro', sans-serif;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -81,21 +80,23 @@ body {
   align-items: flex-start;
 }
 
-.diceOptions {
+#diceOptions {
   display: flex;
   flex-direction: column;
-  background: #852441;
-  padding: 20px;
 }
-.diceOptions ul {
+#diceOptions ul {
   padding: 0;
   margin: 0;
   list-style: none;
 }
-.diceOptions div {
+#diceOptions ul li {
+  margin-bottom: 10px;
+}
+#diceOptions div {
   display: flex;
   justify-content: space-between;
 }
+<<<<<<< HEAD
 .diceOptions input[type="text"] {
   padding: 5px;
   border: none;
@@ -109,6 +110,9 @@ body {
   margin-bottom: 10px;
 }
 .diceOptions li ul {
+=======
+#diceOptions li ul {
+>>>>>>> master
   display: flex;
   flex-wrap: wrap;
   width: 170px;
@@ -142,9 +146,6 @@ li.selected {
 .advancedOptions {
   text-decoration: none;
   color: black;
-}
-ul.advancedOptions li.advancedOptions {
-  margin: 0px;
 }
 
 #resultsField {
