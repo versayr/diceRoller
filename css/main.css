@@ -147,6 +147,10 @@ li.selected {
   text-decoration: none;
   color: black;
 }
+ul.advancedOptions {
+  display: flex;
+  flex-direction: column;
+}
 ul.advancedOptions li.advancedOptions {
   margin: 0px;
 }
@@ -154,7 +158,6 @@ ul.advancedOptions li.advancedOptions {
 #resultsField {
   border: 5px solid #F3E5AB;
   margin-left: 35px;
-  padding: 5px;
   height: 100%;
   max-height: 400px;
   overflow: auto;
@@ -166,13 +169,14 @@ ul.advancedOptions li.advancedOptions {
 }
 #resultsField .result {
   border-top: 1px solid black;
-  margin-top: 2px;
+  padding: 8px;
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
 }
 #resultsField .result:first-of-type {
   border-top: none;
+  background: #d3d3d3;
 }
 #resultsField .totalDiv {
   display: flex;
@@ -184,7 +188,6 @@ ul.advancedOptions li.advancedOptions {
 }
 .resultsTag {
   align-self: flex-end;
-  background: white;
 }
 
 
